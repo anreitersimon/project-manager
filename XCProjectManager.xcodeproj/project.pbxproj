@@ -18,6 +18,17 @@
 			name = XCProjectManagerPackageTests;
 			productName = XCProjectManagerPackageTests;
 		};
+		"XCProjectManager::project-manager::ProductTarget" /* project-manager */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_822 /* Build configuration list for PBXAggregateTarget "project-manager" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_825 /* PBXTargetDependency */,
+			);
+			name = "project-manager";
+			productName = "project-manager";
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -313,516 +324,523 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2D7D94821FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E371FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Rainbow::Rainbow";
 			remoteInfo = Rainbow;
 		};
-		2D7D94831FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E381FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Commander::Commander";
 			remoteInfo = Commander;
 		};
-		2D7D94841FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E391FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "XCProjectManager::XCProjectManagerCore";
 			remoteInfo = XCProjectManagerCore;
 		};
-		2D7D94851FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E3A1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "XcodeGen::XcodeGenKit";
 			remoteInfo = XcodeGenKit;
 		};
-		2D7D94861FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E3B1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "XcodeGen::ProjectSpec";
 			remoteInfo = ProjectSpec;
 		};
-		2D7D94871FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E3C1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Yams::Yams";
 			remoteInfo = Yams;
 		};
-		2D7D94881FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E3D1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Yams::CYaml";
 			remoteInfo = CYaml;
 		};
-		2D7D94891FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E3E1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Yams::CYaml";
 			remoteInfo = CYaml;
 		};
-		2D7D948A1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E3F1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "xcproj::xcproj";
 			remoteInfo = xcproj;
 		};
-		2D7D948B1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E401FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "AEXML::AEXML";
 			remoteInfo = AEXML;
 		};
-		2D7D948C1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E411FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "PathKit::PathKit";
 			remoteInfo = PathKit;
 		};
-		2D7D948D1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E421FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "AEXML::AEXML";
 			remoteInfo = AEXML;
 		};
-		2D7D948E1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E431FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "PathKit::PathKit";
 			remoteInfo = PathKit;
 		};
-		2D7D948F1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E441FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "JSONUtilities::JSONUtilities";
 			remoteInfo = JSONUtilities;
 		};
-		2D7D94901FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E451FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Yams::Yams";
 			remoteInfo = Yams;
 		};
-		2D7D94911FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E461FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Yams::CYaml";
 			remoteInfo = CYaml;
 		};
-		2D7D94921FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E471FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "xcproj::xcproj";
 			remoteInfo = xcproj;
 		};
-		2D7D94931FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E481FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "AEXML::AEXML";
 			remoteInfo = AEXML;
 		};
-		2D7D94941FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E491FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "PathKit::PathKit";
 			remoteInfo = PathKit;
 		};
-		2D7D94951FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E4A1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "JSONUtilities::JSONUtilities";
 			remoteInfo = JSONUtilities;
 		};
-		2D7D94961FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E4B1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "XcodeGen::ProjectSpec";
 			remoteInfo = ProjectSpec;
 		};
-		2D7D94971FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E4C1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Yams::Yams";
 			remoteInfo = Yams;
 		};
-		2D7D94981FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E4D1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Yams::CYaml";
 			remoteInfo = CYaml;
 		};
-		2D7D94991FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E4E1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "xcproj::xcproj";
 			remoteInfo = xcproj;
 		};
-		2D7D949A1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E4F1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "AEXML::AEXML";
 			remoteInfo = AEXML;
 		};
-		2D7D949B1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E501FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "PathKit::PathKit";
 			remoteInfo = PathKit;
 		};
-		2D7D949C1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E511FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "JSONUtilities::JSONUtilities";
 			remoteInfo = JSONUtilities;
 		};
-		2D7D949D1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E521FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::Utility";
 			remoteInfo = Utility;
 		};
-		2D7D949E1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E531FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::Basic";
 			remoteInfo = Basic;
 		};
-		2D7D949F1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E541FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::POSIX";
 			remoteInfo = POSIX;
 		};
-		2D7D94A01FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E551FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::libc";
 			remoteInfo = libc;
 		};
-		2D7D94A11FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E561FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::clibc";
 			remoteInfo = clibc;
 		};
-		2D7D94A21FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E571FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::clibc";
 			remoteInfo = clibc;
 		};
-		2D7D94A31FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E581FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::libc";
 			remoteInfo = libc;
 		};
-		2D7D94A41FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E591FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::clibc";
 			remoteInfo = clibc;
 		};
-		2D7D94A51FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E5A1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::POSIX";
 			remoteInfo = POSIX;
 		};
-		2D7D94A61FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E5B1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::libc";
 			remoteInfo = libc;
 		};
-		2D7D94A71FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E5C1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::clibc";
 			remoteInfo = clibc;
 		};
-		2D7D94A81FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E5D1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::Basic";
 			remoteInfo = Basic;
 		};
-		2D7D94A91FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E5E1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::POSIX";
 			remoteInfo = POSIX;
 		};
-		2D7D94AA1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E5F1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::libc";
 			remoteInfo = libc;
 		};
-		2D7D94AB1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E601FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::clibc";
 			remoteInfo = clibc;
 		};
-		2D7D94AC1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E611FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "XcodeGen::XcodeGenKit";
 			remoteInfo = XcodeGenKit;
 		};
-		2D7D94AD1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E621FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "XcodeGen::ProjectSpec";
 			remoteInfo = ProjectSpec;
 		};
-		2D7D94AE1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E631FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Yams::Yams";
 			remoteInfo = Yams;
 		};
-		2D7D94AF1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E641FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Yams::CYaml";
 			remoteInfo = CYaml;
 		};
-		2D7D94B01FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E651FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "xcproj::xcproj";
 			remoteInfo = xcproj;
 		};
-		2D7D94B11FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E661FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "AEXML::AEXML";
 			remoteInfo = AEXML;
 		};
-		2D7D94B21FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E671FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "PathKit::PathKit";
 			remoteInfo = PathKit;
 		};
-		2D7D94B31FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E681FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "JSONUtilities::JSONUtilities";
 			remoteInfo = JSONUtilities;
 		};
-		2D7D94B41FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E691FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::Utility";
 			remoteInfo = Utility;
 		};
-		2D7D94B51FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E6A1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::Basic";
 			remoteInfo = Basic;
 		};
-		2D7D94B61FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E6B1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::POSIX";
 			remoteInfo = POSIX;
 		};
-		2D7D94B71FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E6C1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::libc";
 			remoteInfo = libc;
 		};
-		2D7D94B81FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E6D1FF83A8D007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::clibc";
 			remoteInfo = clibc;
 		};
-		2D7D94B91FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E6E1FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "XCProjectManager::XCProjectManager";
 			remoteInfo = XCProjectManager;
 		};
-		2D7D94BA1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E6F1FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Rainbow::Rainbow";
 			remoteInfo = Rainbow;
 		};
-		2D7D94BB1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E701FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Commander::Commander";
 			remoteInfo = Commander;
 		};
-		2D7D94BC1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E711FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "XCProjectManager::XCProjectManagerCore";
 			remoteInfo = XCProjectManagerCore;
 		};
-		2D7D94BD1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E721FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "XcodeGen::XcodeGenKit";
 			remoteInfo = XcodeGenKit;
 		};
-		2D7D94BE1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E731FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "XcodeGen::ProjectSpec";
 			remoteInfo = ProjectSpec;
 		};
-		2D7D94BF1FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E741FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Yams::Yams";
 			remoteInfo = Yams;
 		};
-		2D7D94C01FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E751FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Yams::CYaml";
 			remoteInfo = CYaml;
 		};
-		2D7D94C11FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E761FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "xcproj::xcproj";
 			remoteInfo = xcproj;
 		};
-		2D7D94C21FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E771FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "AEXML::AEXML";
 			remoteInfo = AEXML;
 		};
-		2D7D94C31FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E781FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "PathKit::PathKit";
 			remoteInfo = PathKit;
 		};
-		2D7D94C41FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E791FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "JSONUtilities::JSONUtilities";
 			remoteInfo = JSONUtilities;
 		};
-		2D7D94C51FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E7A1FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::Utility";
 			remoteInfo = Utility;
 		};
-		2D7D94C61FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E7B1FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::Basic";
 			remoteInfo = Basic;
 		};
-		2D7D94C71FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E7C1FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::POSIX";
 			remoteInfo = POSIX;
 		};
-		2D7D94C81FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E7D1FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::libc";
 			remoteInfo = libc;
 		};
-		2D7D94C91FF7CBDF0017D02C /* PBXContainerItemProxy */ = {
+		2D473E7E1FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "SwiftPM::clibc";
 			remoteInfo = clibc;
 		};
-		2D7D94CA1FF7CBE30017D02C /* PBXContainerItemProxy */ = {
+		2D473E7F1FF83A8F007EE41F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "XCProjectManager::XCProjectManagerTests";
 			remoteInfo = XCProjectManagerTests;
+		};
+		2D473E801FF83A8F007EE41F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "XCProjectManager::XCProjectManager";
+			remoteInfo = XCProjectManager;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -2501,6 +2519,7 @@
 				"SwiftPM::libc" /* libc */,
 				"SwiftPM::clibc" /* clibc */,
 				"XCProjectManager::XCProjectManagerPackageTests::ProductTarget" /* XCProjectManagerPackageTests */,
+				"XCProjectManager::project-manager::ProductTarget" /* project-manager */,
 			);
 		};
 /* End PBXProject section */
@@ -2926,367 +2945,372 @@
 		OBJ_380 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "XCProjectManager::XCProjectManager" /* XCProjectManager */;
-			targetProxy = 2D7D94B91FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E6E1FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_382 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Rainbow::Rainbow" /* Rainbow */;
-			targetProxy = 2D7D94BA1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E6F1FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_384 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Commander::Commander" /* Commander */;
-			targetProxy = 2D7D94BB1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E701FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_386 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "XCProjectManager::XCProjectManagerCore" /* XCProjectManagerCore */;
-			targetProxy = 2D7D94BC1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E711FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_388 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "XcodeGen::XcodeGenKit" /* XcodeGenKit */;
-			targetProxy = 2D7D94BD1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E721FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_390 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "XcodeGen::ProjectSpec" /* ProjectSpec */;
-			targetProxy = 2D7D94BE1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E731FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_392 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Yams::Yams" /* Yams */;
-			targetProxy = 2D7D94BF1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E741FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_394 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Yams::CYaml" /* CYaml */;
-			targetProxy = 2D7D94C01FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E751FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_396 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "xcproj::xcproj" /* xcproj */;
-			targetProxy = 2D7D94C11FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E761FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_398 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "AEXML::AEXML" /* AEXML */;
-			targetProxy = 2D7D94C21FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E771FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_400 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "PathKit::PathKit" /* PathKit */;
-			targetProxy = 2D7D94C31FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E781FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_402 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "JSONUtilities::JSONUtilities" /* JSONUtilities */;
-			targetProxy = 2D7D94C41FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E791FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_404 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::Utility" /* Utility */;
-			targetProxy = 2D7D94C51FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E7A1FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_406 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::Basic" /* Basic */;
-			targetProxy = 2D7D94C61FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E7B1FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_408 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::POSIX" /* POSIX */;
-			targetProxy = 2D7D94C71FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E7C1FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_410 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::libc" /* libc */;
-			targetProxy = 2D7D94C81FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E7D1FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_412 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::clibc" /* clibc */;
-			targetProxy = 2D7D94C91FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E7E1FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_436 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Rainbow::Rainbow" /* Rainbow */;
-			targetProxy = 2D7D94821FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E371FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_437 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Commander::Commander" /* Commander */;
-			targetProxy = 2D7D94831FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E381FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_438 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "XCProjectManager::XCProjectManagerCore" /* XCProjectManagerCore */;
-			targetProxy = 2D7D94841FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E391FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_439 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "XcodeGen::XcodeGenKit" /* XcodeGenKit */;
-			targetProxy = 2D7D94AC1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E611FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_440 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "XcodeGen::ProjectSpec" /* ProjectSpec */;
-			targetProxy = 2D7D94AD1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E621FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_441 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Yams::Yams" /* Yams */;
-			targetProxy = 2D7D94AE1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E631FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_442 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Yams::CYaml" /* CYaml */;
-			targetProxy = 2D7D94AF1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E641FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_443 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "xcproj::xcproj" /* xcproj */;
-			targetProxy = 2D7D94B01FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E651FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_444 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "AEXML::AEXML" /* AEXML */;
-			targetProxy = 2D7D94B11FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E661FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_445 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "PathKit::PathKit" /* PathKit */;
-			targetProxy = 2D7D94B21FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E671FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_446 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "JSONUtilities::JSONUtilities" /* JSONUtilities */;
-			targetProxy = 2D7D94B31FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E681FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_447 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::Utility" /* Utility */;
-			targetProxy = 2D7D94B41FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E691FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_448 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::Basic" /* Basic */;
-			targetProxy = 2D7D94B51FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E6A1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_449 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::POSIX" /* POSIX */;
-			targetProxy = 2D7D94B61FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E6B1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_450 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::libc" /* libc */;
-			targetProxy = 2D7D94B71FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E6C1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_451 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::clibc" /* clibc */;
-			targetProxy = 2D7D94B81FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E6D1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_502 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "XcodeGen::XcodeGenKit" /* XcodeGenKit */;
-			targetProxy = 2D7D94851FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E3A1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_503 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "XcodeGen::ProjectSpec" /* ProjectSpec */;
-			targetProxy = 2D7D94961FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E4B1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_504 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Yams::Yams" /* Yams */;
-			targetProxy = 2D7D94971FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E4C1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_505 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Yams::CYaml" /* CYaml */;
-			targetProxy = 2D7D94981FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E4D1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_506 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "xcproj::xcproj" /* xcproj */;
-			targetProxy = 2D7D94991FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E4E1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_507 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "AEXML::AEXML" /* AEXML */;
-			targetProxy = 2D7D949A1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E4F1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_508 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "PathKit::PathKit" /* PathKit */;
-			targetProxy = 2D7D949B1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E501FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_509 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "JSONUtilities::JSONUtilities" /* JSONUtilities */;
-			targetProxy = 2D7D949C1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E511FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_510 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::Utility" /* Utility */;
-			targetProxy = 2D7D949D1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E521FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_511 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::Basic" /* Basic */;
-			targetProxy = 2D7D94A81FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E5D1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_512 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::POSIX" /* POSIX */;
-			targetProxy = 2D7D94A91FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E5E1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_513 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::libc" /* libc */;
-			targetProxy = 2D7D94AA1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E5F1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_514 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::clibc" /* clibc */;
-			targetProxy = 2D7D94AB1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E601FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_536 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "XcodeGen::ProjectSpec" /* ProjectSpec */;
-			targetProxy = 2D7D94861FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E3B1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_537 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Yams::Yams" /* Yams */;
-			targetProxy = 2D7D94901FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E451FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_538 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Yams::CYaml" /* CYaml */;
-			targetProxy = 2D7D94911FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E461FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_539 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "xcproj::xcproj" /* xcproj */;
-			targetProxy = 2D7D94921FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E471FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_540 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "AEXML::AEXML" /* AEXML */;
-			targetProxy = 2D7D94931FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E481FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_541 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "PathKit::PathKit" /* PathKit */;
-			targetProxy = 2D7D94941FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E491FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_542 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "JSONUtilities::JSONUtilities" /* JSONUtilities */;
-			targetProxy = 2D7D94951FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E4A1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_572 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Yams::Yams" /* Yams */;
-			targetProxy = 2D7D94871FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E3C1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_573 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Yams::CYaml" /* CYaml */;
-			targetProxy = 2D7D94891FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E3E1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_574 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "xcproj::xcproj" /* xcproj */;
-			targetProxy = 2D7D948A1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E3F1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_575 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "AEXML::AEXML" /* AEXML */;
-			targetProxy = 2D7D948D1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E421FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_576 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "PathKit::PathKit" /* PathKit */;
-			targetProxy = 2D7D948E1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E431FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_577 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "JSONUtilities::JSONUtilities" /* JSONUtilities */;
-			targetProxy = 2D7D948F1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E441FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_599 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Yams::CYaml" /* CYaml */;
-			targetProxy = 2D7D94881FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E3D1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_671 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "AEXML::AEXML" /* AEXML */;
-			targetProxy = 2D7D948B1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E401FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_672 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "PathKit::PathKit" /* PathKit */;
-			targetProxy = 2D7D948C1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E411FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_732 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::Basic" /* Basic */;
-			targetProxy = 2D7D949E1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E531FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_733 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::POSIX" /* POSIX */;
-			targetProxy = 2D7D94A51FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E5A1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_734 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::libc" /* libc */;
-			targetProxy = 2D7D94A61FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E5B1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_735 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::clibc" /* clibc */;
-			targetProxy = 2D7D94A71FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E5C1FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_779 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::POSIX" /* POSIX */;
-			targetProxy = 2D7D949F1FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E541FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_780 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::libc" /* libc */;
-			targetProxy = 2D7D94A31FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E581FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_781 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::clibc" /* clibc */;
-			targetProxy = 2D7D94A41FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E591FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_800 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::libc" /* libc */;
-			targetProxy = 2D7D94A01FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E551FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_801 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::clibc" /* clibc */;
-			targetProxy = 2D7D94A21FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E571FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_809 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "SwiftPM::clibc" /* clibc */;
-			targetProxy = 2D7D94A11FF7CBDF0017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E561FF83A8D007EE41F /* PBXContainerItemProxy */;
 		};
 		OBJ_820 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "XCProjectManager::XCProjectManagerTests" /* XCProjectManagerTests */;
-			targetProxy = 2D7D94CA1FF7CBE30017D02C /* PBXContainerItemProxy */;
+			targetProxy = 2D473E7F1FF83A8F007EE41F /* PBXContainerItemProxy */;
+		};
+		OBJ_825 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "XCProjectManager::XCProjectManager" /* XCProjectManager */;
+			targetProxy = 2D473E801FF83A8F007EE41F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4393,6 +4417,18 @@
 			};
 			name = Release;
 		};
+		OBJ_823 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_824 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -4662,6 +4698,15 @@
 			buildConfigurations = (
 				OBJ_818 /* Debug */,
 				OBJ_819 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_822 /* Build configuration list for PBXAggregateTarget "project-manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_823 /* Debug */,
+				OBJ_824 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
