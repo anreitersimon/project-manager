@@ -1,4 +1,4 @@
-class XCProjManager < Formula
+class XcprojManager < Formula
   desc "Manager that creates xcode-projects supporting micro-features"
   homepage "https://github.com/anreitersimon/project-manager"
   url "https://github.com/anreitersimon/project-manager/archive/0.0.2.tar.gz"
