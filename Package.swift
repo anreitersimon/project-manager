@@ -38,5 +38,3 @@ let package = Package(
             dependencies: ["XCProjectManager"]),
         ]
 )
-
-
