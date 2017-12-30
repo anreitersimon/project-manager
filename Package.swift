@@ -8,7 +8,7 @@ let package = Package(
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .executable(
-            name: "project-manager",
+            name: "xcproj-manager",
             targets: ["XCProjectManager"]),
         .library(
             name: "XCProjectManagerCore",
