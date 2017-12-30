@@ -53,7 +53,6 @@ public struct FeatureSpec: NamedJSONDictionaryConvertible {
     }
 
 }
-
 public class FeatureGenerator {
 
     
@@ -79,8 +78,6 @@ public class FeatureGenerator {
             testTarget,
         ]
       
-       
-        
         for dir in directoriesToCreate {
             
             if !dir.exists {
@@ -120,7 +117,6 @@ public class FeatureGenerator {
             </plist>
             """
             
-            
             logger.info("Creating \(plistFile.string)")
             
             try plistFile.write(content, encoding: .utf8)
@@ -159,7 +155,6 @@ public class FeatureGenerator {
         logger.info("⚙️ Generating workspace...")
         
         try workSpace.write(path: directory + "\(self.spec.name).xcworkspace", override: true)
-        
         
     }
     

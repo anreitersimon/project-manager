@@ -1,5 +1,5 @@
 import XCTest
-@testable import JSONModelGeneratorCore
+@testable import XCProjectManagerCore
 
 class JSONModelGeneratorTests: XCTestCase {
     func testExample() {
