@@ -6,7 +6,7 @@ import xcproj
 import ProjectSpec
 import JSONUtilities
 
-let version = "1.5.0"
+let version = "0.0.1"
 
 func generate(spec: String, outputDir: String, isQuiet: Bool, justVersion: Bool) {
     if justVersion {
