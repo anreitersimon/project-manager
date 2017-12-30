@@ -16,6 +16,6 @@ $ make
 ### Homebrew
 
 ```
-$ brew tap yonaskolb/XcodeGen https://github.com/anreitersimon/project-manager.git
+$ brew tap anreitersimon/project-manager https://github.com/anreitersimon/project-manager.git
 $ brew install xcproj-manager
 ```
