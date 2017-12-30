@@ -68,7 +68,6 @@ public struct WorkspaceSpec: JSONObjectConvertible {
 
 public struct AppSpec: NamedJSONDictionaryConvertible {
     public let name: String
-    public let deploymentTarget: Version?
     
     public let carthageDependencies: [String]?
     public let dependencies: [String]?
@@ -78,8 +77,6 @@ public struct AppSpec: NamedJSONDictionaryConvertible {
         
         carthageDependencies = jsonDictionary.json(atKeyPath: "carthageDependencies")
         dependencies = jsonDictionary.json(atKeyPath: "dependencies")
-        let deploymentTarget: Double? = jsonDictionary.json(atKeyPath: "deploymentTarget")
-        self.deploymentTarget = try deploymentTarget.map { try Version($0) }
     }
     
     public var targetName: String {
@@ -165,7 +162,6 @@ public class FeatureGenerator {
             name: app.targetName,
             type: .application,
             platform: .iOS,
-            deploymentTarget: app.deploymentTarget,
             settings: Settings(
                 buildSettings: [:],
                 configSettings: [:],
@@ -180,7 +176,7 @@ public class FeatureGenerator {
                 testTargets: [
                     app.unitTestTargetName,
                     app.uiTestTargetName,
-                    ],
+                ],
                 configVariants: [],
                 gatherCoverageData: true,
                 commandLineArguments: [:]
@@ -222,7 +218,6 @@ public class FeatureGenerator {
             name: app.unitTestTargetName,
             type: .unitTestBundle,
             platform: .iOS,
-            deploymentTarget: app.deploymentTarget,
             settings: Settings(
                 buildSettings: [:],
                 configSettings: [:],
@@ -250,7 +245,6 @@ public class FeatureGenerator {
             name: app.uiTestTargetName,
             type: .unitTestBundle,
             platform: .iOS,
-            deploymentTarget: app.deploymentTarget,
             settings: Settings(
                 buildSettings: [:],
                 configSettings: [:],
@@ -493,57 +487,96 @@ public class FeatureGenerator {
     
     func generateProject(feature: FeatureSpec, in directory: Path) throws -> XcodeProj {
         
-        let carthage: [JSONDictionary] = feature.carthageDependencies?
-            .map { ["carthage": $0]  } ?? []
+        let carthage: [Dependency] = feature.carthageDependencies?
+            .map { Dependency.init(
+                type: .carthage,
+                reference: $0,
+                embed: false,
+                link: true,
+                implicit: false)
+            } ?? []
         
-        var dependencies: [JSONDictionary] = feature.dependencies?
-            .map { [
-                "framework": "\($0).framework",
-                "implicit": true
-                ] } ?? []
         
+        
+        var dependencies: [Dependency] = feature.dependencies?
+            .map { Dependency.init(
+                type: .framework,
+                reference: "\($0).framework",
+                embed: false,
+                link: true,
+                implicit: true)
+            } ?? []
+
         dependencies.append(contentsOf: carthage)
         
         let targetName = feature.name
         let testTargetName = "\(feature.name)Tests"
         
-        let specJSON: JSONDictionary = [
-            "name": feature.name,
-            "options": [
-                "bundleIdPrefix": "at.imobility",
-                "carthageBuildPath": "../Carthage/Build",
-                "createIntermediateGroups": true,
+        // MARK: - Framework Target
+        let frameworkTarget = Target(
+            name: targetName,
+            type: .framework,
+            platform: .iOS,
+            sources: [
+                TargetSource(path: targetName)
             ],
-            "configs": [
-                "Debug": "debug",
-                "Distribution": "release",
-                "Release": "release",
-            ],
-            "platform": "iOS",
-            "deploymentTarget": 9.0,
-            "targets": [
-                targetName: [
-                    "type": "framework",
-                    "platform": "iOS",
-                    "deploymentTarget": 9.0,
-                    "sources": [targetName],
-                    "settings": [:],
-                    "dependencies": dependencies,
-                    "scheme": [
-                        "testTargets": [testTargetName]
-                    ]
-                ],
-                testTargetName: [
-                    "type": "bundle.unit-test",
-                    "platform": "iOS",
-                    "sources": [testTargetName]
-                ]
-            ]
-        ]
+            dependencies: dependencies,
+            prebuildScripts: [],
+            postbuildScripts: [],
+            scheme: TargetScheme(
+                testTargets: [testTargetName],
+                gatherCoverageData: true,
+                commandLineArguments: [:]
+            ),
+            legacy: nil
+        )
         
-        let spec = try ProjectSpec(
+        
+        // MARK: - Test Target
+        let testTarget = Target(
+            name: testTargetName,
+            type: .unitTestBundle,
+            platform: .iOS,
+            sources: [
+                TargetSource(path: testTargetName)
+            ],
+            dependencies: dependencies,
+            prebuildScripts: [],
+            postbuildScripts: [],
+            scheme: TargetScheme(
+                testTargets: [],
+                gatherCoverageData: true,
+                commandLineArguments: [:]
+            ),
+            legacy: nil
+        )
+        
+        let spec = ProjectSpec(
             basePath: directory,
-            jsonDictionary: specJSON
+            name: feature.name,
+            configs: [
+                Config(name: "Debug", type: .debug),
+                Config(name: "Distribution", type: .release),
+                Config(name: "Release", type: .release),
+                ],
+            targets: [
+                frameworkTarget,
+                testTarget,
+            ],
+            settings: Settings(
+                buildSettings: [:],
+                configSettings: [:],
+                groups: []
+            ),
+            settingGroups: [:],
+            schemes: [],
+            options: .init(
+                carthageBuildPath: "../Carthage/Build",
+                bundleIdPrefix: "at.imobility"
+            ),
+            fileGroups: [],
+            configFiles: [:],
+            attributes: [:]
         )
         
         logger.info("📋 [\(feature.name)] Generating spec:\n  \(spec)")
