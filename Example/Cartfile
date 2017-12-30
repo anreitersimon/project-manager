@@ -1,0 +1,23 @@
+github "RxSwiftCommunity/RxDataSources"
+github "ReactiveX/RxSwift"
+github "Moya/Moya" "10.0.1"
+github "realm/realm-cocoa"
+github "SwiftyBeaver/SwiftyBeaver"
+github "trivago/Heimdallr.swift" ~> 3.6.1
+github "Alamofire/AlamofireImage"
+github "Alamofire/AlamofireNetworkActivityIndicator"
+
+github "ReactiveCocoa/ReactiveObjC" "3.0.0"
+github "ReactiveCocoa/ReactiveObjCBridge" "1.1.0"
+github "ReactiveCocoa/ReactiveSwift" "1.1.5"
+github "apptentive/apptentive-ios"
+github "kaishin/Gifu" "swift4"
+github "mixpanel/mixpanel-iphone"
+github "SVProgressHUD/SVProgressHUD"
+github "uber/rides-ios-sdk" ~> 0.8
+github "raphaelmor/Polyline" ~> 4.0
+github "AppsFlyerSDK/AppsFlyerFramework"
+github "SimonFairbairn/SwiftyMarkdown"
+github "soheilbm/Firebase"
+github "card-io/card.io-iOS-source" "master"
+github "anreitersimon/SwiftSortDescriptor"

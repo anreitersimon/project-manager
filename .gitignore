@@ -66,3 +66,5 @@ xcuserdata
 ### SwiftPM ###
 
 # End of https://www.gitignore.io/api/swift,swiftpm,swiftpackagemanager
+
+Example/Carthage/
