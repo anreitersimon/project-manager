@@ -1,0 +1,25 @@
+name: Example
+files:
+  - example.yml
+
+features:
+  Core:
+    carthageDependencies:
+      - Alamofire
+      - RxSwift
+
+  Persistence:
+    carthageDependencies:
+      - Alamofire
+      - RxSwift
+    dependencies:
+      - Core
+
+  ExampleUIKit:
+    dependencies:
+      - Core
+
+  Authorization:
+    dependencies:
+      - Core
+      - ExampleUIKit
