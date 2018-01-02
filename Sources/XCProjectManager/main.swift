@@ -6,7 +6,7 @@ import xcproj
 import ProjectSpec
 import JSONUtilities
 
-let version = "0.1.2"
+let version = "0.1.3"
 
 enum ManagerCommand: String {
     case scaffold = "scaffold"
