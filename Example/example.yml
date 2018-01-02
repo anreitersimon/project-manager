@@ -7,6 +7,9 @@ apps:
     carthageDependencies:
       - RxDataSources
       - Differentiator
+      - RxSwift
+      - RxCocoa
+      - Differentiator
     dependencies:
       - Core
       - ExampleUIKit
@@ -18,6 +21,8 @@ features:
     carthageDependencies:
       - Alamofire
       - RxSwift
+      - Moya
+      - RxMoya
 
   Persistence:
     carthageDependencies:

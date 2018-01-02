@@ -8,13 +8,33 @@ import JSONUtilities
 
 let version = "0.1.2"
 
-func generate(spec: String, outputDir: String, isQuiet: Bool, justVersion: Bool) {
-    if justVersion {
-        print(version)
-        exit(EXIT_SUCCESS)
+enum ManagerCommand: String {
+    case scaffold = "scaffold"
+    case generate = "generate"
+}
+
+
+typealias CommandRunner = (
+    _ spec: String,
+    _ verbose: Bool,
+    _ version: Bool
+) -> Void
+
+func run(command: ManagerCommand) ->  CommandRunner {
+
+    return { spec, verbose, version in
+        guard !version else {
+            print(version)
+            exit(EXIT_SUCCESS)
+        }
+        
+        run(command, spec: spec, verbose: verbose)
     }
-    
-    let logger = Logger(isQuiet: isQuiet)
+}
+
+func run(_ command: ManagerCommand, spec: String, verbose: Bool) {
+
+    let logger = Logger(isQuiet: !verbose)
     
     func fatalError(_ message: String) -> Never {
         logger.error(message)
@@ -41,11 +61,19 @@ func generate(spec: String, outputDir: String, isQuiet: Bool, justVersion: Bool)
     let projectPath = specPath.parent()
     
     do {
+        let projectGenerator = WorkspaceGenerator(
+            spec: spec,
+            workspacePath: projectPath + "\(spec.name).xcworkspace"
+        )
         
+        switch command {
+        case .generate:
+            try projectGenerator.scaffold()
+            try projectGenerator.generate()
+        case .scaffold:
+            try projectGenerator.scaffold()
+        }
         
-        let projectGenerator = FeatureGenerator(logger: logger, spec: spec)
-        
-        try projectGenerator.generate(directory: projectPath)
         
     } catch let error as SpecValidationError {
         fatalError(error.description)
@@ -54,30 +82,49 @@ func generate(spec: String, outputDir: String, isQuiet: Bool, justVersion: Bool)
     }
 }
 
-command(
-    Option<String>(
-        "spec",
-        default: "project.yml",
-        flag: "s",
-        description: "The path to the spec file"
-    ),
-    Option<String>(
-        "output",
-        default: "",
-        flag: "o",
-        description: "Output Path"
-    ),
-    Flag(
-        "quiet",
-        default: false,
-        flag: "q",
-        description: "Suppress printing of informational and success messages"
-    ),
-    Flag(
-        "version",
-        default: false,
-        flag: "v",
-        description: "Show XcodeGen version"
-    ),
-    generate
-    ).run(version)
+let specOption = Option<String>(
+    "spec",
+    default: "project.yml",
+    flag: "s",
+    description: "The path to the spec file"
+)
+
+let verboseFlag = Flag(
+    "verbose",
+    default: false,
+    description: "Suppress printing of informational and success messages"
+)
+
+let versionFlag = Flag(
+    "version",
+    default: false,
+    flag: "v",
+    description: "Show version"
+)
+
+let group = Group {
+    
+    $0.addCommand(
+        "generate",
+        nil,
+        command(
+            specOption,
+            verboseFlag,
+            versionFlag,
+            run(command: .generate)
+        )
+    )
+    
+    $0.addCommand(
+        "scaffold",
+        nil,
+        command(
+            specOption,
+            verboseFlag,
+            versionFlag,
+            run(command: .scaffold)
+        )
+    )
+}
+
+group.run(version)
