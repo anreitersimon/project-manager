@@ -32,7 +32,7 @@ features:
 
 ```
 
-XCProjectManager will generate the following files
+XCProjectManager will generate the following files (if not already present):
 
 ```
 |____Example.xcworkspace

@@ -47,7 +47,15 @@ $ brew install xcproj-manager
 
 ## Usage
 
-This
+```
+$ xcproj-manager generate --spec path/to/spec.yml
+```
+
+or
+
+```
+$ xcproj-manager scaffold --spec path/to/spec.yml
+```
 
 ## Attributions
 
