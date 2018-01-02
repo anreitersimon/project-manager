@@ -23,19 +23,6 @@ features:
       - RxSwift
       - Moya
       - RxMoya
-
-  Persistence:
-    carthageDependencies:
-      - Alamofire
-      - RxSwift
-    dependencies:
-      - Core
-
   ExampleUIKit:
     dependencies:
       - Core
-
-  Authorization:
-    dependencies:
-      - Core
-      - ExampleUIKit

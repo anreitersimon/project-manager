@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Workspace version="1.0">
+	<FileRef location="group:example.yml" />
+	<FileRef location="group:Example/Example.xcodeproj" />
+	<FileRef location="group:Core/Core.xcodeproj" />
+	<FileRef location="group:ExampleUIKit/ExampleUIKit.xcodeproj" />
+</Workspace>

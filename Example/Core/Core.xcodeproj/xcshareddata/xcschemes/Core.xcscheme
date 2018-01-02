@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Scheme LastUpgradeVersion="0920" version="1.3">
+	<AnalyzeAction buildConfiguration="Debug" />
+	<ArchiveAction buildConfiguration="Distribution" revealArchiveInOrganizer="YES" />
+	<TestAction selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB" codeCoverageEnabled="YES" shouldUseLaunchSchemeArgsEnv="YES" buildConfiguration="Debug">
+		<Testables>
+			<TestableReference skipped="NO">
+				<BuildableReference BlueprintIdentifier="NT_189925025312" ReferencedContainer="container:Core.xcodeproj" BuildableName="CoreTests.xctest" BlueprintName="Core" BuildableIdentifier="primary" />
+			</TestableReference>
+		</Testables>
+		<MacroExpansion>
+			<BuildableReference BlueprintIdentifier="NT_479945004460" ReferencedContainer="container:Core.xcodeproj" BuildableName="Core.framework" BlueprintName="Core" BuildableIdentifier="primary" />
+		</MacroExpansion>
+		<CommandLineArguments />
+	</TestAction>
+	<ProfileAction savedToolIdentifier="" useCustomWorkingDirectory="NO" shouldUseLaunchSchemeArgsEnv="YES" buildConfiguration="Distribution" debugDocumentVersioning="YES">
+		<BuildableProductRunnable runnableDebuggingMode="0">
+			<BuildableReference BlueprintIdentifier="NT_479945004460" ReferencedContainer="container:Core.xcodeproj" BuildableName="Core.framework" BlueprintName="Core" BuildableIdentifier="primary" />
+		</BuildableProductRunnable>
+		<CommandLineArguments />
+	</ProfileAction>
+	<BuildAction parallelizeBuildables="YES" buildImplicitDependencies="YES">
+		<BuildActionEntries>
+			<BuildActionEntry buildForArchiving="YES" buildForTesting="YES" buildForRunning="YES" buildForProfiling="YES" buildForAnalyzing="YES">
+				<BuildableReference BlueprintIdentifier="NT_479945004460" ReferencedContainer="container:Core.xcodeproj" BuildableName="Core.framework" BlueprintName="Core" BuildableIdentifier="primary" />
+			</BuildActionEntry>
+		</BuildActionEntries>
+	</BuildAction>
+	<LaunchAction selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB" launchStyle="0" buildConfiguration="Debug" debugServiceExtension="internal" ignoresPersistentStateOnLaunch="NO" useCustomWorkingDirectory="NO" allowLocationSimulation="YES" debugDocumentVersioning="YES">
+		<BuildableProductRunnable runnableDebuggingMode="0">
+			<BuildableReference BlueprintIdentifier="NT_479945004460" ReferencedContainer="container:Core.xcodeproj" BuildableName="Core.framework" BlueprintName="Core" BuildableIdentifier="primary" />
+		</BuildableProductRunnable>
+		<CommandLineArguments />
+	</LaunchAction>
+</Scheme>
