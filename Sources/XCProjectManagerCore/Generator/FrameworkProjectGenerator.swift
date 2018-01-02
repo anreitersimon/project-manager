@@ -8,8 +8,11 @@ import xcproj
 
 
 public class FrameworkProjectGenerator {
+    public typealias DependencyResolver = (FeatureSpec) throws -> [Dependency]
+    
     public let spec: FeatureSpec
     public let projectPath: Path
+    var dependencyResolver: DependencyResolver
     
     var directory: Path {
         return projectPath.parent()
@@ -19,10 +22,12 @@ public class FrameworkProjectGenerator {
     
     public init(
         spec: FeatureSpec,
-        projectPath: Path
+        projectPath: Path,
+        dependencyResolver: @escaping DependencyResolver
     ) {
         self.spec = spec
         self.projectPath = projectPath
+        self.dependencyResolver = dependencyResolver
     }
     
     func generateMainTargetFiles() throws {
@@ -75,28 +80,7 @@ public class FrameworkProjectGenerator {
     
     
     func generateDependencies() throws -> [Dependency] {
-        
-        let carthage: [Dependency] = self.spec.carthageDependencies?
-            .map { Dependency.init(
-                type: .carthage,
-                reference: $0,
-                embed: false,
-                link: true,
-                implicit: false)
-            } ?? []
-        
-        var dependencies: [Dependency] = self.spec.dependencies?
-            .map { Dependency.init(
-                type: .framework,
-                reference: "\($0).framework",
-                embed: false,
-                link: true,
-                implicit: true)
-            } ?? []
-        
-        dependencies.append(contentsOf: carthage)
-        
-        return dependencies
+        return try dependencyResolver(self.spec)
     }
     
     func generate() throws {

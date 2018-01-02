@@ -36,7 +36,8 @@ extension WorkspaceGenerator {
     public func scaffold(feature: FeatureSpec) throws {
         let generator = FrameworkProjectGenerator(
             spec: feature,
-            projectPath: self.directory + "\(feature.name)/\(feature.name).xcodeproj"
+            projectPath: self.directory + "\(feature.name)/\(feature.name).xcodeproj",
+            dependencyResolver: self.generateDependencies(feature:)
         )
         
         try generator.scaffold()
@@ -47,7 +48,7 @@ extension WorkspaceGenerator {
         let generator = AppProjectGenerator(
             spec: app,
             projectPath: self.directory + "\(app.name)/\(app.name).xcodeproj",
-            dependencyResolver: self.generateAppDependencies
+            dependencyResolver: self.generateDependencies(app:)
         )
         
         try generator.scaffold()
@@ -71,7 +72,8 @@ extension WorkspaceGenerator {
     public func generate(feature: FeatureSpec) throws {
         let generator = FrameworkProjectGenerator(
             spec: feature,
-            projectPath: self.directory + "\(feature.name)/\(feature.name).xcodeproj"
+            projectPath: self.directory + "\(feature.name)/\(feature.name).xcodeproj",
+            dependencyResolver: self.generateDependencies(feature:)
         )
         
         try generator.generate()
@@ -83,7 +85,7 @@ extension WorkspaceGenerator {
         let generator = AppProjectGenerator(
             spec: app,
             projectPath: self.directory + "\(app.name)/\(app.name).xcodeproj",
-            dependencyResolver: self.generateAppDependencies
+            dependencyResolver: self.generateDependencies(app:)
         )
         
         try generator.generate()
@@ -109,4 +111,103 @@ extension WorkspaceGenerator {
             )
         )
     }
+}
+
+extension WorkspaceGenerator {
+    
+    func feature(for name: String) -> FeatureSpec? {
+        return self.spec.features.first { $0.name == name }
+    }
+    
+    func carthage(for name: String) -> FeatureSpec? {
+        return self.spec.features.first { $0.name == name }
+    }
+    
+    func flattenedCarthageDependencies(feature: FeatureSpec) -> Set<String>  {
+        var result = Set<String>(feature.carthageDependencies ?? [])
+        
+        let deps = feature.dependencies ?? []
+        let subFeatures = deps.flatMap { self.feature(for: $0) }
+        
+        for f in subFeatures {
+            result.formUnion(self.flattenedCarthageDependencies(feature: f))
+        }
+        
+        return result
+    }
+    
+    func generateDependencies(app: AppSpec) -> [Dependency] {
+        
+        let deps = app.dependencies ?? []
+        
+        let subFeatures = deps.flatMap { self.feature(for: $0) }
+        
+        var carthageDepNames = Set<String>(app.carthageDependencies ?? [])
+        
+        for f in subFeatures {
+            carthageDepNames.formUnion(self.flattenedCarthageDependencies(feature: f))
+        }
+        
+        
+        let carthageDeps = carthageDepNames.map {
+            return Dependency(
+                type: .carthage,
+                reference: $0,
+                embed: true,
+                link: true,
+                implicit: false
+            )
+        }
+        
+        var dependencies = subFeatures.map {
+            return Dependency(
+                type: .framework,
+                reference: "\($0.name).framework",
+                embed: true,
+                link: true,
+                implicit: true
+            )
+        }
+        
+        dependencies.append(contentsOf: carthageDeps)
+        
+        return dependencies
+    }
+    
+    func generateDependencies(feature: FeatureSpec) -> [Dependency] {
+        
+        let deps = feature.dependencies ?? []
+        
+        let subFeatures = deps.flatMap { self.feature(for: $0) }
+        
+        var carthageDepNames = Set<String>(feature.carthageDependencies ?? [])
+        
+        for f in subFeatures {
+            carthageDepNames.formUnion(self.flattenedCarthageDependencies(feature: f))
+        }
+        
+        
+        let carthage: [Dependency] = carthageDepNames
+            .map { Dependency.init(
+                type: .carthage,
+                reference: $0,
+                embed: false,
+                link: true,
+                implicit: false)
+        }
+        
+        var dependencies: [Dependency] = feature.dependencies?
+            .map { Dependency.init(
+                type: .framework,
+                reference: "\($0).framework",
+                embed: false,
+                link: true,
+                implicit: true)
+            } ?? []
+        
+        dependencies.append(contentsOf: carthage)
+        
+        return dependencies
+    }
+    
 }
