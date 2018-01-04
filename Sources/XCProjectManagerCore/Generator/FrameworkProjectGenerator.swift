@@ -6,13 +6,20 @@ import PathKit
 import Yams
 import xcproj
 
+public protocol FrameworkProjectGeneratorDelegate: class {
+    func findChildren(_ framework: FrameworkSpec) throws -> [FrameworkSpec]
+    func findDependencies(_ framework: FrameworkSpec) throws -> [Dependency]
+    func findBundles(_ framework: FrameworkSpec) throws -> [ResourceBundle]
+}
+
 
 public class FrameworkProjectGenerator {
-    public typealias DependencyResolver = (FeatureSpec) throws -> [Dependency]
     
-    public let spec: FeatureSpec
+    public typealias Delegate = FrameworkProjectGeneratorDelegate
+    
+    public let spec: FrameworkSpec
     public let projectPath: Path
-    var dependencyResolver: DependencyResolver
+    weak var delegate: Delegate?
     
     var directory: Path {
         return projectPath.parent()
@@ -21,35 +28,66 @@ public class FrameworkProjectGenerator {
     var filesystem: FileSystem = DefaultFileSystem()
     
     public init(
-        spec: FeatureSpec,
+        spec: FrameworkSpec,
         projectPath: Path,
-        dependencyResolver: @escaping DependencyResolver
+        delegate: Delegate
     ) {
         self.spec = spec
         self.projectPath = projectPath
-        self.dependencyResolver = dependencyResolver
+        self.delegate = delegate
     }
     
     func generateMainTargetFiles() throws {
         let root = self.directory + self.spec.targetName
         let sources = root + "Sources"
-        let resources = root + "Resources"
         let config = root + "Config"
+        
+        let bundles = try self.findBundles().map { $0.name }
         
         let generator = FileGenerator(filesystem: self.filesystem)
         
         try generator.generateDirectories([
             root,
             sources,
-            resources,
             config
         ])
         
         try generator.generateFiles([
             root + "Info.plist": Plist.frameworkTarget(),
-            sources + "Dependencies.swift": SourceFile.dependencies(feature: self.spec.name)
+            
         ])
         
+        let childModules = try self.delegate?.findChildren(self.spec).map { $0.targetName } ?? []
+        
+        try generator.generateFiles([
+            sources + "Dependencies.swift": SourceFile.dependencies(
+                module: self.spec.name,
+                features: childModules,
+                bundles: bundles,
+                resourceBundleId: self.spec.resourceTargetBundleId
+            )
+        ], overwrite: true)
+        
+    }
+    
+    
+    func generateResourceTargetFiles() throws {
+        let root = self.directory + self.spec.resourceTargetName
+        
+        let plistPath = root + "Info.plist"
+        
+        let generator = FileGenerator(filesystem: self.filesystem)
+        
+        try generator.generateDirectories([
+            root
+        ])
+        
+        try generator.generateFiles([
+            plistPath: Plist.resourceBundle(
+                BUNDLE_IDENTIFIER: self.spec.resourceTargetBundleId,
+                PRODUCT_NAME: self.spec.resourceTargetName
+            )
+        ])
     }
     
     func generateTestTargetFiles() throws {
@@ -69,19 +107,24 @@ public class FrameworkProjectGenerator {
         
         try generator.generateFiles([
             root + "Info.plist": Plist.frameworkTargetTests()
-            ])
-        
+        ])
     }
     
     func scaffold() throws {
         try self.generateMainTargetFiles()
         try self.generateTestTargetFiles()
+        try self.generateResourceTargetFiles()
     }
     
     
-    func generateDependencies() throws -> [Dependency] {
-        return try dependencyResolver(self.spec)
+    func findDependencies() throws -> [Dependency] {
+        return try delegate?.findDependencies(self.spec) ?? []
     }
+    
+    func findBundles() throws -> [ResourceBundle] {
+        return try delegate?.findBundles(self.spec) ?? []
+    }
+    
     
     func generate() throws {
         let project = try self.generateProject()
@@ -89,18 +132,48 @@ public class FrameworkProjectGenerator {
         try project.write(path: self.projectPath)
     }
     
+    func generateResourceBundleTarget() throws -> Target {
+        
+        let targetName = self.spec.resourceTargetName
+        
+        return Target(
+            name: targetName,
+            type: .bundle,
+            platform: .iOS,
+            settings: .init(
+                buildSettings: ["INFOPLIST_FILE": "\(targetName)/Info.plist"]
+            ),
+            sources: [
+                TargetSource(path: targetName)
+            ],
+            dependencies: [],
+            prebuildScripts: [],
+            postbuildScripts: [],
+            scheme: TargetScheme(
+                testTargets: [],
+                gatherCoverageData: true,
+                commandLineArguments: [:]
+            ),
+            legacy: nil
+        )
+    }
+    
     func generateProject() throws -> XcodeProj {
         
-        let dependencies = try self.generateDependencies()
+        let dependencies = try self.findDependencies()
         
         let targetName = self.spec.targetName
         let testTargetName = self.spec.unitTestTargetName
         
+  
         // MARK: - Framework Target
         let frameworkTarget = Target(
             name: targetName,
             type: .framework,
             platform: .iOS,
+            settings: .init(
+                buildSettings: ["INFOPLIST_FILE": "\(targetName)/Info.plist"]
+            ),
             sources: [
                 TargetSource(path: targetName)
             ],
@@ -121,6 +194,9 @@ public class FrameworkProjectGenerator {
             name: testTargetName,
             type: .unitTestBundle,
             platform: .iOS,
+            settings: .init(
+                buildSettings: ["INFOPLIST_FILE": "\(testTargetName)/Info.plist"]
+            ),
             sources: [
                 TargetSource(path: testTargetName)
             ],
@@ -146,6 +222,7 @@ public class FrameworkProjectGenerator {
             targets: [
                 frameworkTarget,
                 testTarget,
+                try generateResourceBundleTarget()
                 ],
             settings: Settings(
                 buildSettings: [:],

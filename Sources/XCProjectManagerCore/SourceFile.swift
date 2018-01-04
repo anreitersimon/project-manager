@@ -8,16 +8,53 @@
 import Foundation
 
 class SourceFile {
+    
+    
     static func dependencies(
-        feature: String
-        ) -> Data {
-        let name = "\(feature.capitalized)DependenciesProtocol"
+        module: String,
+        features: [String],
+        bundles: [String],
+        resourceBundleId: String?
+    ) -> Data {
+        let name = "\(module)DependenciesProtocol"
+        
+        let modules = features.map { $0 }
+        
+        var imports = ["Foundation"]
+        imports.append(contentsOf: modules)
+        
+        let resourcesDeclaration = resourceBundleId.map { _ in
+            return """
+                public static var resources: Bundle? {
+                    return Bundle.main
+                        .url(forResource: "\(module)Resources", withExtension: "bundle", subdirectory: nil)
+                        .flatMap { Bundle(url: $0) }
+                }
+            """
+        }
         
         return """
-            import Foundation
+            \(imports.map { "import \($0)" }.joined(separator: "\n"))
             
             public protocol \(name) {
             
+            }
+            
+            public final class \(module)Description {
+            
+                public static var features: [Any.Type] {
+                    return [
+                        \(modules.map { "\($0)Description.self" }.joined(separator: ",\n          "))
+                    ]
+                }
+            
+                public static var bundles: [Bundle] {
+                    return [
+                    \(modules.map { "\($0)Description.resources" }.joined(separator: ",\n          "))
+                    ].flatMap { $0 }
+                }
+            
+            \(resourcesDeclaration ?? "")
             }
             
             """.data(using: .utf8)!

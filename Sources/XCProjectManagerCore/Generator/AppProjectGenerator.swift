@@ -6,24 +6,30 @@ import PathKit
 import Yams
 import xcproj
 
+public protocol AppProjectGeneratorDelegate: class {
+    func findChildren(_ app: AppSpec) throws -> [FrameworkSpec]
+    func findDependencies(_ app: AppSpec) throws -> [Dependency]
+    func findBundles(_ app: AppSpec) throws -> [ResourceBundle]
+}
+
 public class AppProjectGenerator {
-    public typealias DependencyResolver = (AppSpec) throws -> [Dependency]
+    public typealias Delegate = AppProjectGeneratorDelegate
     
     public let spec: AppSpec
     public let projectPath: Path
     
-    var dependencyResolver: DependencyResolver
+    weak var delegate: Delegate?
     
     var filesystem: FileSystem = DefaultFileSystem()
     
     public init(
         spec: AppSpec,
         projectPath: Path,
-        dependencyResolver: @escaping DependencyResolver
+        delegate: Delegate
     ) {
         self.spec = spec
         self.projectPath = projectPath
-        self.dependencyResolver = dependencyResolver
+        self.delegate = delegate
     }
     
     var directory: Path {
@@ -38,6 +44,7 @@ public class AppProjectGenerator {
         
         let generator = FileGenerator(filesystem: self.filesystem)
         
+        let bundles = try findBundles().map { $0.name }
         try generator.generateDirectories([
             root,
             sources,
@@ -47,10 +54,20 @@ public class AppProjectGenerator {
         
         try generator.generateFiles([
             root + "Info.plist": Plist.app(),
-            sources + "Dependencies.swift": SourceFile.dependencies(feature: self.spec.name),
+            
             sources + "AppDelegate.swift": SourceFile.appdelegate()
         ])
         
+        let childModules = try self.delegate?.findChildren(self.spec).map { $0.targetName } ?? []
+        
+        try generator.generateFiles([
+            sources + "Dependencies.swift": SourceFile.dependencies(
+                module: self.spec.name,
+                features: childModules,
+                bundles: bundles,
+                resourceBundleId: nil
+            ),
+        ], overwrite: true)
     }
     
     func generateUITestFiles() throws {
@@ -108,16 +125,17 @@ public class AppProjectGenerator {
     }
     
     func generateAppTarget() throws -> Target {
-        
-        let dependencies = try self.generateDependencies()
+
+        let dependencies = try self.findDependencies()
         
         return Target(
             name: self.spec.targetName,
             type: .application,
             platform: .iOS,
-            sources: [
-                TargetSource(path: self.spec.targetName)
-            ],
+            settings: .init(
+                buildSettings: ["INFOPLIST_FILE": "\(self.spec.targetName)/Info.plist"]
+            ),
+            sources: [TargetSource(path: self.spec.targetName)],
             dependencies: dependencies,
             prebuildScripts: [],
             postbuildScripts: [],
@@ -137,12 +155,15 @@ public class AppProjectGenerator {
     
     func generateUnitTestTarget() throws -> Target {
         
-        let dependencies = try self.generateDependencies()
+        let dependencies = try self.findDependencies()
         
         return Target(
             name: self.spec.unitTestTargetName,
             type: .unitTestBundle,
             platform: .iOS,
+            settings: .init(
+                buildSettings: ["INFOPLIST_FILE": "\(self.spec.unitTestTargetName)/Info.plist"]
+            ),
             sources: [
                 TargetSource(path: self.spec.unitTestTargetName)
             ],
@@ -161,12 +182,15 @@ public class AppProjectGenerator {
     
     func generateUITestTarget() throws -> Target {
         
-        let dependencies = try self.generateDependencies()
+        let dependencies = try self.findDependencies()
         
         return Target(
             name: self.spec.uiTestTargetName,
             type: .uiTestBundle,
             platform: .iOS,
+            settings: .init(
+                buildSettings: ["INFOPLIST_FILE": "\(self.spec.uiTestTargetName)/Info.plist"]
+            ),
             sources: [
                 TargetSource(path: self.spec.uiTestTargetName)
             ],
@@ -220,11 +244,18 @@ public class AppProjectGenerator {
         )
         
         return try generator.generateProject()
+        
     }
     
-    func generateDependencies() throws -> [Dependency] {
-        return try dependencyResolver(self.spec)
+    func findDependencies() throws -> [Dependency] {
+        return try self.delegate?.findDependencies(self.spec) ?? []
     }
+    
+    
+    func findBundles() throws -> [ResourceBundle] {
+        return try self.delegate?.findBundles(self.spec) ?? []
+    }
+    
 }
 
 

@@ -2,17 +2,26 @@ import JSONUtilities
 import XcodeGenKit
 import ProjectSpec
 
-public struct AppSpec: NamedJSONDictionaryConvertible {
+public struct AppSpec: SpecProtocol, NamedJSONDictionaryConvertible {
+
     public let name: String
     
-    public let carthageDependencies: [String]?
+    public let bundleIdentifier: String?
+    
+    public let carthage: [String]?
     public let dependencies: [String]?
+    public let resourceBundles: [ResourceBundle]?
+    public let staticLibraryCompatible: Bool?
+    
     
     public init(name: String, jsonDictionary: JSONDictionary) throws {
         self.name = name
         
-        carthageDependencies = jsonDictionary.json(atKeyPath: "carthageDependencies")
+        bundleIdentifier = jsonDictionary.json(atKeyPath: "bundleIdentifier")
+        carthage = jsonDictionary.json(atKeyPath: "carthage")
         dependencies = jsonDictionary.json(atKeyPath: "dependencies")
+        resourceBundles = jsonDictionary.json(atKeyPath: "resourceBundles")
+        staticLibraryCompatible = jsonDictionary.json(atKeyPath: "staticLibraryCompatible")
     }
 }
 

@@ -46,9 +46,15 @@ class FileGenerator {
         
     }
     
-    func generateFiles(_ files: [Path: Data]) throws {
+    func generateFiles(_ files: [Path: Data], overwrite: Bool = false) throws {
         
-        for (path, contents) in files where !filesystem.exists(path) {
+        let predicate: (Path) -> Bool = { path in
+            if !self.filesystem.exists(path) { return true }
+            
+            return overwrite
+        }
+        
+        for (path, contents) in files where predicate(path) {
             try filesystem.write(contents, to: path)
         }
         

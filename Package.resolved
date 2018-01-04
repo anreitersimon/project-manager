@@ -75,11 +75,11 @@
       },
       {
         "package": "XcodeGen",
-        "repositoryURL": "https://github.com/yonaskolb/XcodeGen.git",
+        "repositoryURL": "https://github.com/anreitersimon/XcodeGen.git",
         "state": {
-          "branch": null,
-          "revision": "1153e020e18408f8f2c77597450adc8f7e924cc8",
-          "version": "1.5.0"
+          "branch": "683ad55",
+          "revision": "683ad55ba19f2091461f5a4d64043dbd443eba54",
+          "version": null
         }
       },
       {

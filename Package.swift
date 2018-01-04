@@ -16,7 +16,7 @@ let package = Package(
         ],
     dependencies:  [
         .package(url: "https://github.com/apple/swift-package-manager.git", from: "0.1.0"),
-        .package(url: "https://github.com/yonaskolb/XcodeGen.git", from: "1.0.0"),
+        .package(url: "https://github.com/anreitersimon/XcodeGen.git", .revision("683ad55")),
         .package(url: "https://github.com/kylef/Commander.git", from: "0.8.0"),
         .package(url: "https://github.com/onevcat/Rainbow.git", from: "3.0.0"),
         ],
@@ -32,9 +32,13 @@ let package = Package(
             name: "XCProjectManagerCore",
             dependencies: [
                 "Utility",
-                "XcodeGenKit"]),
+                "XcodeGenKit"
+            ]),
         .testTarget(
             name: "XCProjectManagerTests",
-            dependencies: ["XCProjectManager"]),
+            dependencies: [
+                "XCProjectManager"
+            ]),
         ]
 )
+

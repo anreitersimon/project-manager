@@ -5,7 +5,7 @@ public struct WorkspaceSpec: JSONObjectConvertible {
     public let name: String
     public let files: [String]?
     public let apps: [AppSpec]
-    public let features: [FeatureSpec]
+    public let features: [FrameworkSpec]
     
     public init(jsonDictionary: JSONDictionary) throws {
         name = try jsonDictionary.json(atKeyPath: "name")
