@@ -155,7 +155,11 @@ public class AppProjectGenerator {
     
     func generateUnitTestTarget() throws -> Target {
         
-        let dependencies = try self.findDependencies()
+        var dependencies = try self.findDependencies()
+        
+        dependencies.append(
+            Dependency(type: .target, reference: self.spec.targetName)
+        )
         
         return Target(
             name: self.spec.unitTestTargetName,
@@ -172,7 +176,7 @@ public class AppProjectGenerator {
             postbuildScripts: [],
             scheme: TargetScheme(
                 testTargets: [],
-                gatherCoverageData: true,
+                gatherCoverageData: false,
                 commandLineArguments: [:]
             ),
             legacy: nil
@@ -181,8 +185,6 @@ public class AppProjectGenerator {
     }
     
     func generateUITestTarget() throws -> Target {
-        
-        let dependencies = try self.findDependencies()
         
         return Target(
             name: self.spec.uiTestTargetName,
@@ -194,12 +196,14 @@ public class AppProjectGenerator {
             sources: [
                 TargetSource(path: self.spec.uiTestTargetName)
             ],
-            dependencies: dependencies,
+            dependencies: [
+                Dependency(type: .target, reference: self.spec.targetName)
+            ],
             prebuildScripts: [],
             postbuildScripts: [],
             scheme: TargetScheme(
                 testTargets: [],
-                gatherCoverageData: true,
+                gatherCoverageData: false,
                 commandLineArguments: [:]
             ),
             legacy: nil

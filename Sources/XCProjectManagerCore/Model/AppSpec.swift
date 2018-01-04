@@ -36,7 +36,7 @@ extension AppSpec {
     }
     
     public var uiTestTargetName: String {
-        return "\(self.name)UI-Tests"
+        return "\(self.name)UITests"
     }
 }
 

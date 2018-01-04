@@ -160,7 +160,11 @@ public class FrameworkProjectGenerator {
     
     func generateProject() throws -> XcodeProj {
         
-        let dependencies = try self.findDependencies()
+        var dependencies = try self.findDependencies()
+        
+        dependencies.append(
+            Dependency(type: .target, reference: self.spec.targetName)
+        )
         
         let targetName = self.spec.targetName
         let testTargetName = self.spec.unitTestTargetName
