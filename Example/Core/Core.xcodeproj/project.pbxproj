@@ -7,29 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF_146257842808 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_178059453259 /* Moya.framework */; };
-		BF_264776546446 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_160229092999 /* Alamofire.framework */; };
-		BF_270885913872 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_897515268542 /* RxSwift.framework */; };
+		BF_252969047660 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FR_479945004460 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF_384314774752 = {isa = PBXBuildFile; fileRef = FR_189925025312 /* CoreTests.xctest */; };
-		BF_420417812276 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_727559221777 /* RxMoya.framework */; };
+		BF_435892556803 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_479945004460 /* Core.framework */; };
 		BF_579407357112 = {isa = PBXBuildFile; fileRef = FR_479945004460 /* Core.framework */; };
-		BF_693832299613 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_897515268542 /* RxSwift.framework */; };
+		BF_582740412886 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_582492940454 /* CoreTests.swift */; };
 		BF_707356402053 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_247806154017 /* Dependencies.swift */; };
-		BF_753446675333 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_178059453259 /* Moya.framework */; };
-		BF_812789411318 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_160229092999 /* Alamofire.framework */; };
-		BF_825189593029 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_727559221777 /* RxMoya.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CIP_18992502531 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_4799450044600 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_479945004460;
+			remoteInfo = Core;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CFBP_4990365509 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF_252969047660 /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		FR_160229092999 /* Alamofire.framework */ = {isa = PBXFileReference; path = Alamofire.framework; sourceTree = "<group>"; };
-		FR_178059453259 /* Moya.framework */ = {isa = PBXFileReference; path = Moya.framework; sourceTree = "<group>"; };
 		FR_189925025312 /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = xctest; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_247806154017 /* Dependencies.swift */ = {isa = PBXFileReference; path = Dependencies.swift; sourceTree = "<group>"; };
 		FR_479945004460 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_582492940454 /* CoreTests.swift */ = {isa = PBXFileReference; path = CoreTests.swift; sourceTree = "<group>"; };
 		FR_606738944757 /* Info.plist */ = {isa = PBXFileReference; path = Info.plist; sourceTree = "<group>"; };
-		FR_727559221777 /* RxMoya.framework */ = {isa = PBXFileReference; path = RxMoya.framework; sourceTree = "<group>"; };
 		FR_824253597714 /* Info.plist */ = {isa = PBXFileReference; path = Info.plist; sourceTree = "<group>"; };
-		FR_897515268542 /* RxSwift.framework */ = {isa = PBXFileReference; path = RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,21 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF_812789411318 /* Alamofire.framework in Frameworks */,
-				BF_825189593029 /* RxMoya.framework in Frameworks */,
-				BF_693832299613 /* RxSwift.framework in Frameworks */,
-				BF_146257842808 /* Moya.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBP_47994500446 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF_264776546446 /* Alamofire.framework in Frameworks */,
-				BF_420417812276 /* RxMoya.framework in Frameworks */,
-				BF_270885913872 /* RxSwift.framework in Frameworks */,
-				BF_753446675333 /* Moya.framework in Frameworks */,
+				BF_435892556803 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,39 +63,11 @@
 		G_1899250253127 /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				FR_582492940454 /* CoreTests.swift */,
 				FR_606738944757 /* Info.plist */,
 			);
 			name = CoreTests;
 			path = CoreTests;
-			sourceTree = "<group>";
-		};
-		G_1952740716080 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				G_2883690153011 /* Carthage */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		G_2262017438925 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				FR_160229092999 /* Alamofire.framework */,
-				FR_178059453259 /* Moya.framework */,
-				FR_727559221777 /* RxMoya.framework */,
-				FR_897515268542 /* RxSwift.framework */,
-			);
-			name = iOS;
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		G_2883690153011 /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				G_2262017438925 /* iOS */,
-			);
-			name = Carthage;
-			path = ../Carthage/Build;
 			sourceTree = "<group>";
 		};
 		G_4799450044600 /* Core */ = {
@@ -111,7 +85,6 @@
 			children = (
 				G_4799450044600 /* Core */,
 				G_1899250253127 /* CoreTests */,
-				G_1952740716080 /* Frameworks */,
 				G_8620238527590 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,11 +114,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_189925025312 /* Build configuration list for PBXNativeTarget "CoreTests" */;
 			buildPhases = (
+				SBP_18992502531 /* Sources */,
 				FBP_18992502531 /* Frameworks */,
+				CFBP_4990365509 /* Embed Frameworks */,
+				SSBP_5663216798 /* Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				TD_536178630640 /* PBXTargetDependency */,
 			);
 			name = CoreTests;
 			productName = CoreTests;
@@ -157,7 +134,6 @@
 			buildConfigurationList = "CL_479945004460-1" /* Build configuration list for PBXNativeTarget "Core" */;
 			buildPhases = (
 				SBP_47994500446 /* Sources */,
-				FBP_47994500446 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,7 +168,32 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		SSBP_5663216798 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		SBP_18992502531 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_582740412886 /* CoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		SBP_47994500446 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,6 +203,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		TD_536178630640 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_479945004460 /* Core */;
+			targetProxy = CIP_18992502531 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BC_171001196616 /* Distribution */ = {
@@ -214,16 +223,9 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.Core;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -242,16 +244,9 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.Core;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -320,15 +315,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = CoreTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks @loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.CoreTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -339,15 +327,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = CoreTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks @loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.CoreTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -358,15 +339,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = CoreTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks @loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.CoreTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -383,16 +357,9 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.Core;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;

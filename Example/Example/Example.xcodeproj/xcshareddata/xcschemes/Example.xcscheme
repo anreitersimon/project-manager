@@ -8,7 +8,7 @@
 				<BuildableReference BlueprintIdentifier="NT_358039319594" ReferencedContainer="container:Example.xcodeproj" BuildableName="ExampleTests.xctest" BlueprintName="Example" BuildableIdentifier="primary" />
 			</TestableReference>
 			<TestableReference skipped="NO">
-				<BuildableReference BlueprintIdentifier="NT_754438074160" ReferencedContainer="container:Example.xcodeproj" BuildableName="ExampleUI-Tests.xctest" BlueprintName="Example" BuildableIdentifier="primary" />
+				<BuildableReference BlueprintIdentifier="NT_434389203885" ReferencedContainer="container:Example.xcodeproj" BuildableName="ExampleUITests.xctest" BlueprintName="Example" BuildableIdentifier="primary" />
 			</TestableReference>
 		</Testables>
 		<MacroExpansion>

@@ -7,148 +7,89 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF_107695459302 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_716536179282 /* Differentiator.framework */; };
-		BF_117540376327 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_897515268542 /* RxSwift.framework */; };
-		BF_137699398566 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_573180541754 /* RxCocoa.framework */; };
-		BF_201720520805 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_160229092999 /* Alamofire.framework */; };
-		BF_262878074312 /* ExampleUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_999697586046 /* ExampleUIKit.framework */; };
-		"BF_262878074312-1" /* ExampleUIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_999697586046 /* ExampleUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF_194216969438 /* CoreResources.bundle in Embed Resource Bundles */ = {isa = PBXBuildFile; fileRef = FR_332672672989 /* CoreResources.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF_281375628934 = {isa = PBXBuildFile; fileRef = FR_811841688257 /* Example.app */; };
-		BF_300453498454 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_727559221777 /* RxMoya.framework */; };
-		BF_302212441362 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_897515268542 /* RxSwift.framework */; };
-		BF_321150460490 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_716536179282 /* Differentiator.framework */; };
-		BF_354297239691 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_160229092999 /* Alamofire.framework */; };
-		BF_400905784564 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_855249021874 /* RxDataSources.framework */; };
-		BF_438276875299 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_178059453259 /* Moya.framework */; };
+		BF_399024594100 /* ExampleUIKitResources.bundle in Embed Resource Bundles */ = {isa = PBXBuildFile; fileRef = FR_427844645285 /* ExampleUIKitResources.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF_406923261251 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_234841811136 /* ExampleUITests.swift */; };
+		BF_440528428630 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_720282360816 /* ExampleTests.swift */; };
 		BF_442380672497 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_698629011372 /* Dependencies.swift */; };
-		BF_449493174621 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_573180541754 /* RxCocoa.framework */; };
 		BF_461157930218 /* ExampleUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_999697586046 /* ExampleUIKit.framework */; };
-		"BF_461157930218-1" /* ExampleUIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_999697586046 /* ExampleUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF_499169217925 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_495536037600 /* Core.framework */; };
-		"BF_499169217925-1" /* Core.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_495536037600 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF_611418987308 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_727559221777 /* RxMoya.framework */; };
-		BF_632882159865 = {isa = PBXBuildFile; fileRef = FR_754438074160 /* ExampleUI-Tests.xctest */; };
+		"BF_461157930218-1" /* ExampleUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FR_999697586046 /* ExampleUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF_636973197185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_899791089418 /* AppDelegate.swift */; };
-		BF_674829082148 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_727559221777 /* RxMoya.framework */; };
 		BF_681434240257 = {isa = PBXBuildFile; fileRef = FR_358039319594 /* ExampleTests.xctest */; };
-		BF_694136564856 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_178059453259 /* Moya.framework */; };
 		BF_707441632981 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_495536037600 /* Core.framework */; };
-		"BF_707441632981-1" /* Core.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_495536037600 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF_733688176649 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_855249021874 /* RxDataSources.framework */; };
-		BF_744489642291 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_855249021874 /* RxDataSources.framework */; };
-		BF_746986363107 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_897515268542 /* RxSwift.framework */; };
-		BF_780167006397 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_573180541754 /* RxCocoa.framework */; };
-		BF_780790427291 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_160229092999 /* Alamofire.framework */; };
-		BF_796448939976 /* ExampleUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_999697586046 /* ExampleUIKit.framework */; };
-		"BF_796448939976-1" /* ExampleUIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_999697586046 /* ExampleUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF_823252949097 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_495536037600 /* Core.framework */; };
-		"BF_823252949097-1" /* Core.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_495536037600 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF_826669932647 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_716536179282 /* Differentiator.framework */; };
-		BF_834544688724 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_178059453259 /* Moya.framework */; };
+		"BF_707441632981-1" /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FR_495536037600 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF_863162322620 = {isa = PBXBuildFile; fileRef = FR_434389203885 /* ExampleUITests.xctest */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CIP_35803931959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_8118416882571 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_811841688257;
+			remoteInfo = Example;
+		};
+		CIP_43438920388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_8118416882571 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_811841688257;
+			remoteInfo = Example;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		CFBP_1335013547 /* CopyFiles */ = {
+		CFBP_1335013547 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				"BF_707441632981-1" /* Core.framework in CopyFiles */,
-				"BF_461157930218-1" /* ExampleUIKit.framework in CopyFiles */,
+				"BF_707441632981-1" /* Core.framework in Embed Frameworks */,
+				"BF_461157930218-1" /* ExampleUIKit.framework in Embed Frameworks */,
 			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFBP_3821621883 /* CopyFiles */ = {
+		CFBP_7249506455 /* Embed Resource Bundles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstSubfolderSpec = 7;
 			files = (
-				"BF_823252949097-1" /* Core.framework in CopyFiles */,
-				"BF_262878074312-1" /* ExampleUIKit.framework in CopyFiles */,
+				BF_399024594100 /* ExampleUIKitResources.bundle in Embed Resource Bundles */,
+				BF_194216969438 /* CoreResources.bundle in Embed Resource Bundles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CFBP_4795157336 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				"BF_499169217925-1" /* Core.framework in CopyFiles */,
-				"BF_796448939976-1" /* ExampleUIKit.framework in CopyFiles */,
-			);
+			name = "Embed Resource Bundles";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FR_100020163977 /* Info.plist */ = {isa = PBXFileReference; path = Info.plist; sourceTree = "<group>"; };
-		FR_160229092999 /* Alamofire.framework */ = {isa = PBXFileReference; path = Alamofire.framework; sourceTree = "<group>"; };
-		FR_178059453259 /* Moya.framework */ = {isa = PBXFileReference; path = Moya.framework; sourceTree = "<group>"; };
+		FR_234841811136 /* ExampleUITests.swift */ = {isa = PBXFileReference; path = ExampleUITests.swift; sourceTree = "<group>"; };
+		FR_332672672989 /* CoreResources.bundle */ = {isa = PBXFileReference; path = CoreResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_358039319594 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = xctest; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_380712314131 /* Info.plist */ = {isa = PBXFileReference; path = Info.plist; sourceTree = "<group>"; };
+		FR_417516798490 /* Info.plist */ = {isa = PBXFileReference; path = Info.plist; sourceTree = "<group>"; };
+		FR_427844645285 /* ExampleUIKitResources.bundle */ = {isa = PBXFileReference; path = ExampleUIKitResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_434389203885 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = xctest; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_495536037600 /* Core.framework */ = {isa = PBXFileReference; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_573180541754 /* RxCocoa.framework */ = {isa = PBXFileReference; path = RxCocoa.framework; sourceTree = "<group>"; };
 		FR_649556874164 /* Info.plist */ = {isa = PBXFileReference; path = Info.plist; sourceTree = "<group>"; };
 		FR_698629011372 /* Dependencies.swift */ = {isa = PBXFileReference; path = Dependencies.swift; sourceTree = "<group>"; };
-		FR_716536179282 /* Differentiator.framework */ = {isa = PBXFileReference; path = Differentiator.framework; sourceTree = "<group>"; };
-		FR_727559221777 /* RxMoya.framework */ = {isa = PBXFileReference; path = RxMoya.framework; sourceTree = "<group>"; };
-		FR_754438074160 /* ExampleUI-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = xctest; includeInIndex = 0; path = "ExampleUI-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_720282360816 /* ExampleTests.swift */ = {isa = PBXFileReference; path = ExampleTests.swift; sourceTree = "<group>"; };
 		FR_811841688257 /* Example.app */ = {isa = PBXFileReference; explicitFileType = app; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_855249021874 /* RxDataSources.framework */ = {isa = PBXFileReference; path = RxDataSources.framework; sourceTree = "<group>"; };
-		FR_897515268542 /* RxSwift.framework */ = {isa = PBXFileReference; path = RxSwift.framework; sourceTree = "<group>"; };
 		FR_899791089418 /* AppDelegate.swift */ = {isa = PBXFileReference; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FR_999697586046 /* ExampleUIKit.framework */ = {isa = PBXFileReference; path = ExampleUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FBP_35803931959 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF_823252949097 /* Core.framework in Frameworks */,
-				BF_262878074312 /* ExampleUIKit.framework in Frameworks */,
-				BF_780790427291 /* Alamofire.framework in Frameworks */,
-				BF_694136564856 /* Moya.framework in Frameworks */,
-				BF_137699398566 /* RxCocoa.framework in Frameworks */,
-				BF_674829082148 /* RxMoya.framework in Frameworks */,
-				BF_400905784564 /* RxDataSources.framework in Frameworks */,
-				BF_117540376327 /* RxSwift.framework in Frameworks */,
-				BF_321150460490 /* Differentiator.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBP_75443807416 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF_499169217925 /* Core.framework in Frameworks */,
-				BF_796448939976 /* ExampleUIKit.framework in Frameworks */,
-				BF_201720520805 /* Alamofire.framework in Frameworks */,
-				BF_438276875299 /* Moya.framework in Frameworks */,
-				BF_449493174621 /* RxCocoa.framework in Frameworks */,
-				BF_300453498454 /* RxMoya.framework in Frameworks */,
-				BF_733688176649 /* RxDataSources.framework in Frameworks */,
-				BF_746986363107 /* RxSwift.framework in Frameworks */,
-				BF_107695459302 /* Differentiator.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FBP_81184168825 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BF_707441632981 /* Core.framework in Frameworks */,
 				BF_461157930218 /* ExampleUIKit.framework in Frameworks */,
-				BF_354297239691 /* Alamofire.framework in Frameworks */,
-				BF_834544688724 /* Moya.framework in Frameworks */,
-				BF_780167006397 /* RxCocoa.framework in Frameworks */,
-				BF_611418987308 /* RxMoya.framework in Frameworks */,
-				BF_744489642291 /* RxDataSources.framework in Frameworks */,
-				BF_302212441362 /* RxSwift.framework in Frameworks */,
-				BF_826669932647 /* Differentiator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,44 +99,30 @@
 		G_1952740716080 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				G_2883690153011 /* Carthage */,
 				FR_495536037600 /* Core.framework */,
 				FR_999697586046 /* ExampleUIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		G_2262017438925 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				FR_160229092999 /* Alamofire.framework */,
-				FR_716536179282 /* Differentiator.framework */,
-				FR_178059453259 /* Moya.framework */,
-				FR_573180541754 /* RxCocoa.framework */,
-				FR_855249021874 /* RxDataSources.framework */,
-				FR_727559221777 /* RxMoya.framework */,
-				FR_897515268542 /* RxSwift.framework */,
-			);
-			name = iOS;
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		G_2883690153011 /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				G_2262017438925 /* iOS */,
-			);
-			name = Carthage;
-			path = ../Carthage/Build;
-			sourceTree = "<group>";
-		};
 		G_3580393195945 /* ExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				FR_720282360816 /* ExampleTests.swift */,
 				FR_100020163977 /* Info.plist */,
 			);
 			name = ExampleTests;
 			path = ExampleTests;
+			sourceTree = "<group>";
+		};
+		G_4343892038855 /* ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FR_234841811136 /* ExampleUITests.swift */,
+				FR_417516798490 /* Info.plist */,
+			);
+			name = ExampleUITests;
+			path = ExampleUITests;
 			sourceTree = "<group>";
 		};
 		G_6019856371554 /* Sources */ = {
@@ -208,13 +135,13 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		G_7544380741600 /* ExampleUI-Tests */ = {
+		G_7189434949822 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FR_380712314131 /* Info.plist */,
+				FR_332672672989 /* CoreResources.bundle */,
+				FR_427844645285 /* ExampleUIKitResources.bundle */,
 			);
-			name = "ExampleUI-Tests";
-			path = "ExampleUI-Tests";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		G_8118416882571 /* Example */ = {
@@ -232,9 +159,10 @@
 			children = (
 				G_8118416882571 /* Example */,
 				G_3580393195945 /* ExampleTests */,
-				G_7544380741600 /* ExampleUI-Tests */,
+				G_4343892038855 /* ExampleUITests */,
 				G_1952740716080 /* Frameworks */,
 				G_8620238527590 /* Products */,
+				G_7189434949822 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,7 +171,7 @@
 			children = (
 				FR_811841688257 /* Example.app */,
 				FR_358039319594 /* ExampleTests.xctest */,
-				FR_754438074160 /* ExampleUI-Tests.xctest */,
+				FR_434389203885 /* ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,32 +183,32 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_358039319594 /* Build configuration list for PBXNativeTarget "ExampleTests" */;
 			buildPhases = (
-				FBP_35803931959 /* Frameworks */,
-				CFBP_3821621883 /* CopyFiles */,
+				SBP_35803931959 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				TD_758424861854 /* PBXTargetDependency */,
 			);
 			name = ExampleTests;
 			productName = ExampleTests;
 			productReference = FR_358039319594 /* ExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		NT_754438074160 /* ExampleUI-Tests */ = {
+		NT_434389203885 /* ExampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CL_754438074160 /* Build configuration list for PBXNativeTarget "ExampleUI-Tests" */;
+			buildConfigurationList = CL_434389203885 /* Build configuration list for PBXNativeTarget "ExampleUITests" */;
 			buildPhases = (
-				FBP_75443807416 /* Frameworks */,
-				CFBP_4795157336 /* CopyFiles */,
+				SBP_43438920388 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				TD_795438090991 /* PBXTargetDependency */,
 			);
-			name = "ExampleUI-Tests";
-			productName = "ExampleUI-Tests";
-			productReference = FR_754438074160 /* ExampleUI-Tests.xctest */;
+			name = ExampleUITests;
+			productName = ExampleUITests;
+			productReference = FR_434389203885 /* ExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		NT_811841688257 /* Example */ = {
@@ -289,8 +217,8 @@
 			buildPhases = (
 				SBP_81184168825 /* Sources */,
 				FBP_81184168825 /* Frameworks */,
-				CFBP_1335013547 /* CopyFiles */,
-				SSBP_1108946741 /* Carthage */,
+				CFBP_1335013547 /* Embed Frameworks */,
+				CFBP_7249506455 /* Embed Resource Bundles */,
 			);
 			buildRules = (
 			);
@@ -308,6 +236,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0920;
+				TargetAttributes = {
+					NT_434389203885 = {
+						TestTargetID = NT_811841688257;
+					};
+				};
 			};
 			buildConfigurationList = CL_811841688257 /* Build configuration list for PBXProject "Example" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -321,43 +254,28 @@
 			targets = (
 				NT_811841688257 /* Example */,
 				NT_358039319594 /* ExampleTests */,
-				NT_754438074160 /* ExampleUI-Tests */,
+				NT_434389203885 /* ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		SSBP_1108946741 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXSourcesBuildPhase section */
+		SBP_35803931959 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/Differentiator.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/Moya.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/RxDataSources.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/RxMoya.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differentiator.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Moya.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxMoya.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				BF_440528428630 /* ExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
+		SBP_43438920388 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_406923261251 /* ExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		SBP_81184168825 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,25 +287,57 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		TD_758424861854 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_811841688257 /* Example */;
+			targetProxy = CIP_35803931959 /* PBXContainerItemProxy */;
+		};
+		TD_795438090991 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_811841688257 /* Example */;
+			targetProxy = CIP_43438920388 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		BC_128660091127 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.ExampleUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Example;
+			};
+			name = Release;
+		};
 		BC_193880517564 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.Example;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC_307592185539 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.ExampleUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Example;
 			};
 			name = Debug;
 		};
@@ -397,15 +347,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.Example;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -418,15 +361,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.Example;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -493,18 +429,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = ExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks @loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.ExampleTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Release;
 		};
@@ -512,94 +442,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = ExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks @loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.ExampleTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Distribution;
 		};
-		BC_685027798652 /* Release */ = {
+		BC_707283621375 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "ExampleUI-Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks @loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "at.imobility.ExampleUI-Tests";
+				INFOPLIST_FILE = ExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.ExampleUITests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		BC_701054481530 /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "ExampleUI-Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks @loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "at.imobility.ExampleUI-Tests";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Example;
 			};
 			name = Distribution;
-		};
-		BC_768239943008 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "ExampleUI-Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks @loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "at.imobility.ExampleUI-Tests";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 		};
 		BC_804521649148 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = ExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks @loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.imobility.ExampleTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Debug;
 		};
@@ -712,12 +586,12 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "";
 		};
-		CL_754438074160 /* Build configuration list for PBXNativeTarget "ExampleUI-Tests" */ = {
+		CL_434389203885 /* Build configuration list for PBXNativeTarget "ExampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC_768239943008 /* Debug */,
-				BC_701054481530 /* Distribution */,
-				BC_685027798652 /* Release */,
+				BC_307592185539 /* Debug */,
+				BC_707283621375 /* Distribution */,
+				BC_128660091127 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "";
