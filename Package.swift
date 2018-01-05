@@ -16,7 +16,7 @@ let package = Package(
         ],
     dependencies:  [
         .package(url: "https://github.com/apple/swift-package-manager.git", from: "0.1.0"),
-        .package(url: "https://github.com/anreitersimon/XcodeGen.git", .revision("683ad55")),
+        .package(url: "https://github.com/anreitersimon/XcodeGen.git", .revision("c4ba951")),
         .package(url: "https://github.com/kylef/Commander.git", from: "0.8.0"),
         .package(url: "https://github.com/onevcat/Rainbow.git", from: "3.0.0"),
         ],

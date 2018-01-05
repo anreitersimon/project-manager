@@ -6,18 +6,22 @@ import PathKit
 import Yams
 import xcproj
 
+
 public class WorkspaceGenerator {
     public let spec: WorkspaceSpec
     public let workspacePath: Path
+    public let makeFilePath: Path
     
     var filesystem: FileSystem = DefaultFileSystem()
     
     public init(
         spec: WorkspaceSpec,
-        workspacePath: Path
+        workspacePath: Path,
+        makeFilePath: Path
     ) {
         self.spec = spec
         self.workspacePath = workspacePath
+        self.makeFilePath = makeFilePath
     }
     
     var directory: Path {
@@ -47,6 +51,12 @@ extension WorkspaceGenerator {
     public func scaffold() throws {
         try self.spec.apps.forEach(self.scaffold(app:))
         try self.spec.features.forEach(self.scaffold(feature:))
+        
+        let makeFile = try Makefile.generate(try self.generateTargets())
+        
+        let fileGenerator = FileGenerator(filesystem: self.filesystem)
+        
+        try fileGenerator.generateFiles([self.makeFilePath : makeFile], overwrite: true)
     }
 
     public func scaffold(feature: FrameworkSpec) throws {
@@ -63,6 +73,14 @@ extension WorkspaceGenerator {
 
 // MARK: - Generate
 extension WorkspaceGenerator {
+    
+    public func generateTargets() throws -> [Target] {
+        return [
+            try self.spec.apps.flatMap { try self.generator(for: $0).generateTargets() },
+            try self.spec.features.flatMap { try self.generator(for: $0).generateTargets() },
+        ].flatMap { $0 }
+    }
+    
     
     public func generate() throws {
         let workspace = try generateWorkSpace()
@@ -111,73 +129,35 @@ extension WorkspaceGenerator {
     func carthage(for name: String) -> FrameworkSpec? {
         return self.spec.features.first { $0.name == name }
     }
-    
-    func flattenedCarthageDependencies(feature: FrameworkSpec) -> Set<String>  {
-        var result = Set<String>(feature.carthage ?? [])
-        
-        let deps = feature.dependencies ?? []
-        let subFeatures = deps.flatMap { self.feature(for: $0) }
-        
-        for f in subFeatures {
-            result.formUnion(self.flattenedCarthageDependencies(feature: f))
-        }
-        
-        return result
-    }
-    
-    func flattenedBundles(feature: FrameworkSpec) -> Set<ResourceBundle>  {
 
-        var result = Set<ResourceBundle>([self.resourceBundle(feature)])
-        
-        let deps = feature.dependencies ?? []
-        let subFeatures = deps.flatMap { self.feature(for: $0) }
-        
-        for f in subFeatures {
-            result.formUnion(self.flattenedBundles(feature: f))
-        }
-        
-        return result
-    }
     
 }
 
 extension WorkspaceGenerator: FrameworkProjectGenerator.Delegate {
     
+    public func dependencies(of app: AppSpec) throws -> DependencyDeclaration {
+        
+        return recursiveDependencies(app)
+            .reduce(DependencyDeclaration()) { (sum, part) in
+                return sum + declare(part) + dependencies(of: part)
+        }
+    }
     
-    public func findDependencies(_ framework: FrameworkSpec) throws -> [Dependency] {
+    func declare(_ framework: FrameworkSpec) -> DependencyDeclaration {
+        return DependencyDeclaration(
+            carthage: Set(framework.carthage ?? []),
+            frameworkList: [framework],
+            bundleList: [ resourceBundle(framework) ]
+        )
+    }
+
+    
+    public func dependencies(of framework: FrameworkSpec) -> DependencyDeclaration {
+        let deps = recursiveDependencies(framework)
         
-        let deps = framework.dependencies ?? []
-        
-        let subFeatures = deps.flatMap { self.feature(for: $0) }
-        
-        var carthageDepNames = Set<String>(framework.carthage ?? [])
-        
-        for f in subFeatures {
-            carthageDepNames.formUnion(self.flattenedCarthageDependencies(feature: f))
+        return deps.reduce(DependencyDeclaration()) { sum, part in
+            return sum + declare(part) + dependencies(of: part)
         }
-        
-        
-        let carthage: [Dependency] = carthageDepNames
-            .map { Dependency.init(
-                type: .carthage,
-                reference: $0,
-                embed: false,
-                link: true,
-                implicit: false)
-        }
-        
-        var dependencies: [Dependency] = framework.dependencies?
-            .map { Dependency.init(
-                type: .framework,
-                reference: "\($0).framework",
-                embed: false,
-                link: true,
-                implicit: true)
-            } ?? []
-        
-        dependencies.append(contentsOf: carthage)
-        
-        return dependencies
     }
     
     func resourceBundle(_ framework: FrameworkSpec) -> ResourceBundle {
@@ -188,32 +168,19 @@ extension WorkspaceGenerator: FrameworkProjectGenerator.Delegate {
         )
     }
     
-    public func findBundles(_ framework: FrameworkSpec) throws -> [ResourceBundle] {
-        let deps = framework.dependencies ?? []
-        
-        let subFeatures = deps.flatMap { self.feature(for: $0) }
-        
-        var resourceBundles = Set([self.resourceBundle(framework)])
-        
-        for f in subFeatures {
-            resourceBundles.formUnion(self.flattenedBundles(feature: f))
-        }
-        
-        return Array(resourceBundles)
-    }
-
 }
 
 extension WorkspaceGenerator: AppProjectGenerator.Delegate {
-    public func findChildren(_ app: AppSpec) throws -> [FrameworkSpec] {
-        return recursiveDependencies(app)
-    }
-    
-    public func findChildren(_ framework: FrameworkSpec) throws -> [FrameworkSpec] {
-        return recursiveDependencies(framework)
-    }
+
     
     private func nameToSpecs(_ value: [FrameworkSpec]) -> [String: FrameworkSpec] {
+        let nameAndSpec = value.map { ($0.name, $0) }
+        
+        return Dictionary(nameAndSpec) { old,_ in old  }
+    }
+    
+    
+    private func nameToBundles(_ value: [ResourceBundle]) -> [String: ResourceBundle] {
         let nameAndSpec = value.map { ($0.name, $0) }
         
         return Dictionary(nameAndSpec) { old,_ in old  }
@@ -255,73 +222,5 @@ extension WorkspaceGenerator: AppProjectGenerator.Delegate {
         
         return Array(nameToSpec.values)
     }
-    
-    
-    public func findDependencies(_ app: AppSpec) throws -> [Dependency] {
-        
-        let deps = app.dependencies ?? []
-        
-        let subFeatures = deps.flatMap { self.feature(for: $0) }
-        
-        let childCarthageDeps = recursiveDependencies(app)
-            .flatMap { $0.carthage ?? [] }
-        
-        let carthageDepNames = Set<String>(app.carthage ?? [])
-            .union(childCarthageDeps)
-        
-        
-        let carthageDeps = carthageDepNames.map {
-            return Dependency(
-                type: .carthage,
-                reference: $0,
-                embed: true,
-                link: true,
-                implicit: false
-            )
-        }
-        
-        
-        let resourceBundles = Set<ResourceBundle>(try findBundles(app))
-        
-        let resourceBundleDeps = resourceBundles.map {
-            return Dependency(
-                type: .resourceBundle,
-                reference: "\($0.name).bundle",
-                embed: true,
-                link: false,
-                implicit: true
-            )
-        }
-        
-        var dependencies = subFeatures.map {
-            return Dependency(
-                type: .framework,
-                reference: "\($0.name).framework",
-                embed: true,
-                link: true,
-                implicit: true
-            )
-        }
-        
-        dependencies.append(contentsOf: carthageDeps)
-        dependencies.append(contentsOf: resourceBundleDeps)
-        
-        return dependencies
-    }
-    
-    public func findBundles(_ app: AppSpec) throws -> [ResourceBundle] {
-        let deps = app.dependencies ?? []
-        
-        let subFeatures = deps.flatMap { self.feature(for: $0) }
-        
-        var resourceBundles = Set(app.resourceBundles ?? [])
-        
-        for f in subFeatures {
-            resourceBundles.formUnion(self.flattenedBundles(feature: f))
-        }
-        
-        return Array(resourceBundles)
-    }
-    
     
 }

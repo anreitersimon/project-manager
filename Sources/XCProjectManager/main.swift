@@ -63,7 +63,8 @@ func run(_ command: ManagerCommand, spec: String, verbose: Bool) {
     do {
         let projectGenerator = WorkspaceGenerator(
             spec: spec,
-            workspacePath: projectPath + "\(spec.name).xcworkspace"
+            workspacePath: projectPath + "\(spec.name).xcworkspace",
+            makeFilePath: projectPath + "Makefile"
         )
         
         switch command {

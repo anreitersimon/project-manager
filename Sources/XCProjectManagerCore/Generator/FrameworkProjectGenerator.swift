@@ -7,9 +7,7 @@ import Yams
 import xcproj
 
 public protocol FrameworkProjectGeneratorDelegate: class {
-    func findChildren(_ framework: FrameworkSpec) throws -> [FrameworkSpec]
-    func findDependencies(_ framework: FrameworkSpec) throws -> [Dependency]
-    func findBundles(_ framework: FrameworkSpec) throws -> [ResourceBundle]
+    func dependencies(of framework: FrameworkSpec) throws -> DependencyDeclaration
 }
 
 
@@ -20,6 +18,38 @@ public class FrameworkProjectGenerator {
     public let spec: FrameworkSpec
     public let projectPath: Path
     weak var delegate: Delegate?
+    
+    var _dependencies: DependencyDeclaration?
+    
+    var dependencies: DependencyDeclaration {
+        if let d = _dependencies {
+            return d
+        }
+        
+        guard let d = self.delegate else { return DependencyDeclaration()  }
+        
+        let result = (try? d.dependencies(of: self.spec)) ?? DependencyDeclaration()
+        
+        _dependencies = result
+        
+        return result
+    }
+    
+    var testDependencies: [Dependency] {
+        
+        var result = self.dependencies
+        
+        result.carthage.formUnion(self.spec.carthage ?? [])
+        
+        var dependencies = result.generateDependencies(embed: true, link: true, implicit: true)
+        
+        dependencies.append(
+            Dependency(type: .target, reference: self.spec.targetName, embed: true)
+        )
+        
+        return dependencies
+    }
+    
     
     var directory: Path {
         return projectPath.parent()
@@ -37,12 +67,21 @@ public class FrameworkProjectGenerator {
         self.delegate = delegate
     }
     
+    
+    public func generateTargets() throws -> [Target] {
+        return [
+            try self.generateFrameworkTarget(),
+            try self.generateTestTarget()
+        ].flatMap { $0 }
+    }
+    
     func generateMainTargetFiles() throws {
         let root = self.directory + self.spec.targetName
         let sources = root + "Sources"
         let config = root + "Config"
         
-        let bundles = try self.findBundles().map { $0.name }
+        let bundles = Array(self.dependencies.bundles.keys)
+        let childModules = Array(self.dependencies.frameworks.keys)
         
         let generator = FileGenerator(filesystem: self.filesystem)
         
@@ -54,11 +93,8 @@ public class FrameworkProjectGenerator {
         
         try generator.generateFiles([
             root + "Info.plist": Plist.frameworkTarget(),
-            
         ])
-        
-        let childModules = try self.delegate?.findChildren(self.spec).map { $0.targetName } ?? []
-        
+    
         try generator.generateFiles([
             sources + "Dependencies.swift": SourceFile.dependencies(
                 module: self.spec.name,
@@ -92,22 +128,22 @@ public class FrameworkProjectGenerator {
     
     func generateTestTargetFiles() throws {
         let root = self.directory + self.spec.unitTestTargetName
-        let sources = root + "Sources"
-        let resources = root + "Resources"
         let config = root + "Config"
         
         let generator = FileGenerator(filesystem: self.filesystem)
         
         try generator.generateDirectories([
             root,
-            sources,
-            resources,
             config
-            ])
+        ])
         
         try generator.generateFiles([
             root + "Info.plist": Plist.frameworkTargetTests()
         ])
+        
+        try generator.generateFiles([
+            root + "\(self.spec.targetName)Tests.swift": SourceFile.unitTest(name: self.spec.targetName, dependency: self.dependencies)
+        ], overwrite: true)
     }
     
     func scaffold() throws {
@@ -115,16 +151,6 @@ public class FrameworkProjectGenerator {
         try self.generateTestTargetFiles()
         try self.generateResourceTargetFiles()
     }
-    
-    
-    func findDependencies() throws -> [Dependency] {
-        return try delegate?.findDependencies(self.spec) ?? []
-    }
-    
-    func findBundles() throws -> [ResourceBundle] {
-        return try delegate?.findBundles(self.spec) ?? []
-    }
-    
     
     func generate() throws {
         let project = try self.generateProject()
@@ -151,27 +177,20 @@ public class FrameworkProjectGenerator {
             postbuildScripts: [],
             scheme: TargetScheme(
                 testTargets: [],
-                gatherCoverageData: true,
+                gatherCoverageData: false,
                 commandLineArguments: [:]
             ),
             legacy: nil
         )
     }
     
-    func generateProject() throws -> XcodeProj {
-        
-        var dependencies = try self.findDependencies()
-        
-        dependencies.append(
-            Dependency(type: .target, reference: self.spec.targetName)
-        )
+    func generateFrameworkTarget() throws -> Target {
         
         let targetName = self.spec.targetName
-        let testTargetName = self.spec.unitTestTargetName
         
-  
-        // MARK: - Framework Target
-        let frameworkTarget = Target(
+        let dependencies = self.dependencies.generateDependencies(embed: false, link: true, implicit: true)
+        
+        return Target(
             name: targetName,
             type: .framework,
             platform: .iOS,
@@ -183,18 +202,48 @@ public class FrameworkProjectGenerator {
             ],
             dependencies: dependencies,
             prebuildScripts: [],
-            postbuildScripts: [],
+            postbuildScripts: [ /* generateFrameworkCarthageScript(dependencies) */],
             scheme: TargetScheme(
-                testTargets: [testTargetName],
+                testTargets: [self.spec.unitTestTargetName],
                 gatherCoverageData: true,
                 commandLineArguments: [:]
             ),
             legacy: nil
         )
+    }
+    
+    
+    func generateFrameworkCarthageScript(_ dependencies: [Dependency]) -> BuildScript {
+        let carthageBuildPath = "../Carthage/Build"
+        
+        let carthageFrameworksToEmbed = dependencies
+            .filter { $0.type == .carthage }
+            .map { $0.reference }
+            .sorted()
+        
+        let inputPaths = carthageFrameworksToEmbed
+            .map { "$(SRCROOT)/\(carthageBuildPath)/iOS/\($0)\($0.contains(".") ? "" : ".framework")" }
+        let outputPaths = carthageFrameworksToEmbed
+            .map { "$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/\($0)\($0.contains(".") ? "" : ".framework")" }
         
         
-        // MARK: - Test Target
-        let testTarget = Target(
+        return  BuildScript(
+            script: .script("""
+            /usr/local/bin/carthage copy-frameworks
+            """),
+            name: "Carthage",
+            inputFiles: inputPaths,
+            outputFiles: outputPaths,
+            shell: nil,
+            runOnlyWhenInstalling: false
+        )
+    }
+    
+    func generateTestTarget() throws -> Target {
+        
+        let testTargetName = self.spec.unitTestTargetName
+        
+        return Target(
             name: testTargetName,
             type: .unitTestBundle,
             platform: .iOS,
@@ -204,16 +253,19 @@ public class FrameworkProjectGenerator {
             sources: [
                 TargetSource(path: testTargetName)
             ],
-            dependencies: dependencies,
+            dependencies: testDependencies,
             prebuildScripts: [],
-            postbuildScripts: [],
+            postbuildScripts: [generateFrameworkCarthageScript(self.testDependencies)],
             scheme: TargetScheme(
                 testTargets: [],
-                gatherCoverageData: true,
+                gatherCoverageData: false,
                 commandLineArguments: [:]
             ),
             legacy: nil
         )
+    }
+    
+    func generateProject() throws -> XcodeProj {
         
         let spec = ProjectSpec(
             basePath: self.directory,
@@ -223,11 +275,7 @@ public class FrameworkProjectGenerator {
                 Config(name: "Distribution", type: .release),
                 Config(name: "Release", type: .release),
                 ],
-            targets: [
-                frameworkTarget,
-                testTarget,
-                try generateResourceBundleTarget()
-                ],
+            targets: try generateTargets(),
             settings: Settings(
                 buildSettings: [:],
                 configSettings: [:],

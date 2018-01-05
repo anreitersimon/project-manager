@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/JohnSundell/ShellOut.git",
         "state": {
           "branch": null,
-          "revision": "479a89d9bfa7585496bd4a3e4faffac5b01af37f",
-          "version": "2.0.0"
+          "revision": "f1c253a34a40df4bfd268b09fdb101b059f6d52d",
+          "version": "2.1.0"
         }
       },
       {
@@ -77,8 +77,8 @@
         "package": "XcodeGen",
         "repositoryURL": "https://github.com/anreitersimon/XcodeGen.git",
         "state": {
-          "branch": "683ad55",
-          "revision": "683ad55ba19f2091461f5a4d64043dbd443eba54",
+          "branch": "c4ba951",
+          "revision": "c4ba9518663a98a616aada687394969bb6fd49ac",
           "version": null
         }
       },
