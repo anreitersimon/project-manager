@@ -1,6 +1,6 @@
 
 TOOL_NAME = xcproj-manager
-VERSION = 0.1.3
+VERSION = 0.1.4
 
 PREFIX = /usr/local
 INSTALL_PATH = $(PREFIX)/bin/$(TOOL_NAME)
